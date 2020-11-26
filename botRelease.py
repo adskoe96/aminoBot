@@ -24,7 +24,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	if message.content.startswith(',h'):
-		await message.channel.send(embed = discord.Embed(title = 'Help menu.', description = ',h - Помощь:\n,getGlobalProfile [Profile URL] - Получить информацию о глобальном профиле.\n,getId [USER | CHAT | BLOG URL] - Вычислить Object ID.\n\ndeveloped by - <@413001095720337409>\npowered by Amino.py', color=0x24ff00))
+		await message.channel.send(embed = discord.Embed(title = 'Помощь по командам:', description = ',h - Помощь.\n,getGlobalProfile [Profile URL] - Получить информацию о глобальном профиле.\n,getId [USER | CHAT | BLOG URL] - Вычислить Object ID.\n,updates - Узнать нововведения бота.\ndeveloped by - <@413001095720337409>\npowered by Amino.py', color=0x24ff00))
 #
 #GETID
 #
@@ -50,9 +50,30 @@ async def on_message(message):
 			v = uzer.onlineStatus
 			b = uzer.aminoId
 			n = uzer.accountMembershipStatus
-			await message.channel.send(embed = discord.Embed(title = '{0}'.format(x), description = 'Ник: {0}\nОписание: {1}\nUser ID: {2}\nСсылка на аватар: {3}\nОнлайн статус: {4}\nAminoID: {5}\nAccount Membership Status: {6}\nСсылка на пользователя: http://aminoapps.com/u/{7}'.format(x, y, c, z, v, b, n, b), color=0x24ff00).set_thumbnail(url=z))
+			if n == 1:
+				n = 'Amino+ в наличии'
+			elif n == 0:
+				n = 'Amino+ отсутствует'
+			else:
+				pass
+			if v == 1:
+				v = '✔ В сети'
+			elif v == 2:
+				v = '❌ Не в сети'
+			else:
+				pass
+			await message.channel.send(embed = discord.Embed(title = '{0}'.format(x), description = 'Ник: {0}\nОписание: {1}\nUser ID: {2}\nСсылка на аватар: {3}\nОнлайн статус: {4}\nAminoID: {5}\nAmino+ статус: {6}\nСсылка на пользователя: http://aminoapps.com/u/{7}'.format(x, y, c, z, v, b, n, b), color=0x24ff00).set_thumbnail(url=z))
 		except:
 			await message.channel.send(embed = discord.Embed(title="Ошибка получения глобального профиля:", description="Проверьте правильность написания.", color=0xff0000))
+#
+#UPDATES
+#
+	if message.content.startswith(',updates'):
+		try:
+			await message.channel.send(embed = discord.Embed(title="AminoBot 0.15", description="https://pastebin.com/raw/CJ9JY79Q", color=0xff0000))
+		except:
+			await message.channel.send(embed = discord.Embed(title="Ошибка на получение информации об обновлениях:", description="Проверьте правильность написания.", color=0x0000ff))
+
 #
 #CLIENT RUN
 #
