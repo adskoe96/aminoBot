@@ -24,7 +24,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	if message.content.startswith(',h'):
-		await message.channel.send(embed = discord.Embed(title = 'Помощь по командам:', description = ',h - Помощь.\n,getGlobalProfile [Profile URL] - Получить информацию о глобальном профиле.\n,getId [USER | CHAT | BLOG URL] - Вычислить Object ID.\n,updates - Узнать нововведения бота.\ndeveloped by - <@413001095720337409>\npowered by Amino.py', color=0x24ff00))
+		await message.channel.send(embed = discord.Embed(title = 'Помощь по командам:', description = ',h - Помощь.\n,getGlobalProfile [Profile URL] - Получить информацию о глобальном профиле.\n,getId [USER | CHAT | BLOG URL] - Вычислить Object ID.\n,updates - Узнать нововведения бота.\n\ndeveloped by - <@413001095720337409>\npowered by Amino.py', color=0x24ff00))
 #
 #GETID
 #
