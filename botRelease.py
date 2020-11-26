@@ -50,7 +50,7 @@ async def on_message(message):
 			v = uzer.onlineStatus
 			b = uzer.aminoId
 			n = uzer.accountMembershipStatus
-			await message.channel.send(embed = discord.Embed(title = '{0}'.format(x), description = 'Ник: {0}\nОписание: {1}\nUser ID: {2}\nСсылка на аватар: {3}\nОнлайн статус: {4}\nAminoID: {5}\nAccount Membership Status: {6}'.format(x, y, c, z, v, b, n), color=0x24ff00).set_thumbnail(url=z))
+			await message.channel.send(embed = discord.Embed(title = '{0}'.format(x), description = 'Ник: {0}\nОписание: {1}\nUser ID: {2}\nСсылка на аватар: {3}\nОнлайн статус: {4}\nAminoID: {5}\nAccount Membership Status: {6}\nСсылка на пользователя: http://aminoapps.com/u/{7}'.format(x, y, c, z, v, b, n, b), color=0x24ff00).set_thumbnail(url=z))
 		except:
 			await message.channel.send(embed = discord.Embed(title="Ошибка получения глобального профиля:", description="Проверьте правильность написания.", color=0xff0000))
 #
