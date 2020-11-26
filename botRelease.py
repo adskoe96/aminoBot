@@ -70,9 +70,9 @@ async def on_message(message):
 #
 	if message.content.startswith(',updates'):
 		try:
-			await message.channel.send(embed = discord.Embed(title="AminoBot 0.15", description="https://pastebin.com/raw/CJ9JY79Q", color=0xff0000))
+			await message.channel.send(embed = discord.Embed(title="AminoBot 0.15", description="https://pastebin.com/raw/CJ9JY79Q", color=0x0000ff))
 		except:
-			await message.channel.send(embed = discord.Embed(title="Ошибка на получение информации об обновлениях:", description="Проверьте правильность написания.", color=0x0000ff))
+			await message.channel.send(embed = discord.Embed(title="Ошибка на получение информации об обновлениях:", description="Проверьте правильность написания.", color=0xff0000))
 
 #
 #CLIENT RUN
