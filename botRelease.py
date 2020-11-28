@@ -51,9 +51,9 @@ async def on_message(message):
 			b = uzer.aminoId
 			n = uzer.accountMembershipStatus
 			if n == 1:
-				n = 'Amino+ в наличии'
+				n = '✔️'
 			elif n == 0:
-				n = 'Amino+ отсутствует'
+				n = '❌'
 			else:
 				pass
 			if v == 1:
