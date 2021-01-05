@@ -66,6 +66,19 @@ async def on_message(message):
 		except:
 			await message.channel.send(embed = discord.Embed(title="Ошибка получения глобального профиля:", description="Проверьте правильность написания.", color=0xff0000))
 #
+#GET_BLOG_INFO (ADD IT SOON)
+#
+	if message.content.startswith(',getBlogInfo'):
+		try:
+			split = message.content.split(" ")
+			id = aminoClient.get_from_code(split[1]).objectId
+			getblog = aminoClient.get_blog_info(id)
+			blog_content = getblog.blog.content
+			blog_title = getblog.blog.title
+			await message.channel.send(embed = discord.Embed(title = f'{blog_title}', description = f'Название поста: {blog_title}\nОписание Поста: {blog_content}\nАйди поста: {id}', color=0x24ff00))
+		except:
+			await message.channel.send(embed = discord.Embed(title="Ошибка получения информации от поста:", description="Проверьте правильность написания.", color=0xff0000))
+#
 #UPDATES
 #
 	if message.content.startswith(',updates'):
@@ -77,4 +90,4 @@ async def on_message(message):
 #
 #CLIENT RUN
 #
-client.run(token)
+client.run(token)сания.
