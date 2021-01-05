@@ -90,4 +90,4 @@ async def on_message(message):
 #
 #CLIENT RUN
 #
-client.run(token)сания.
+client.run(token)
