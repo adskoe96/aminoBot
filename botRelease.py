@@ -32,7 +32,7 @@ async def on_message(message):
 		try:
 			split = message.content.split(" ")
 			id = aminoClient.get_from_code(split[1]).objectId
-			await message.channel.send("`id`")
+			await message.channel.send(f"`{id}`")
 		except:
 			await message.channel.send(embed = discord.Embed(title="Ошибка получения Object ID:", description=":exclamation: | Проверьте правильность написания.", color=0xff0000))
 #
