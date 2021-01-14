@@ -24,7 +24,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	if message.content.startswith(',h'):
-		await message.channel.send(embed = discord.Embed(title = 'Помощь по командам:', description = ',h - Помощь.\n,getGlobalProfile [Profile URL] - Получить информацию о глобальном профиле.\n,getId [USER | CHAT | BLOG URL] - Вычислить Object ID.\n\ndeveloped by - <@413001095720337409>\npowered by Amino.py', color=0x24ff00))
+		await message.channel.send(embed = discord.Embed(title = 'Help tab:', description = ',h - Help tab.\n,getGlobalProfile [Profile URL] - Get Global Profile Information.\n,getId [USER | CHAT | BLOG URL] - Discover Object ID.\n\ndeveloped by - <@413001095720337409>\npowered by Amino.py', color=0x24ff00))
 #
 #GETID
 #
@@ -34,7 +34,7 @@ async def on_message(message):
 			id = aminoClient.get_from_code(split[1]).objectId
 			await message.channel.send(f"`{id}`")
 		except:
-			await message.channel.send(embed = discord.Embed(title="Ошибка получения Object ID:", description=":exclamation: | Проверьте правильность написания.", color=0xff0000))
+			await message.channel.send(embed = discord.Embed(title="Receive error Object ID:", description=":exclamation: | Check the spelling.", color=0xff0000))
 #
 #GET_GLOBAL_PROFILE
 #
@@ -58,14 +58,14 @@ async def on_message(message):
 			else:
 				pass
 			if v == 1:
-				v = '✔ В сети'
+				v = '✔ Online'
 			elif v == 2:
-				v = '❌ Не в сети'
+				v = '❌ Offline'
 			else:
 				pass
-			await message.channel.send(embed = discord.Embed(title = '{0}'.format(x), description = 'Ник: {0}\nОписание: {1}\nUser ID: {2}\nСсылка на аватар: {3}\nОнлайн статус: {4}\nAminoID: {5}\nAmino+ статус: {6}\nСсылка на пользователя: http://aminoapps.com/u/{7}\nДата создания аккаунта: {8}'.format(x, y, c, z, v, b, n, b, m), color=0x24ff00).set_thumbnail(url=z))
+			await message.channel.send(embed = discord.Embed(title = '{0}'.format(x), description = 'Nickname: {0}\nDescription: {1}\nUser ID: {2}\nLink to avatar: {3}\nOnline status: {4}\nAminoID: {5}\nAmino+ status: {6}\nLink to user: http://aminoapps.com/u/{7}\nAccount creation date: {8}'.format(x, y, c, z, v, b, n, b, m), color=0x24ff00).set_thumbnail(url=z))
 		except:
-			await message.channel.send(embed = discord.Embed(title="Ошибка получения глобального профиля:", description=":exclamation: | Проверьте правильность написания.", color=0xff0000))
+			await message.channel.send(embed = discord.Embed(title="Error retrieving global profile:", description=":exclamation: | Check the spelling.", color=0xff0000))
 #
 #GET_BLOG_INFO (ADD IT SOON)
 #
@@ -78,7 +78,7 @@ async def on_message(message):
 #			blog_title = getblog.blog.title
 #			await message.channel.send(embed = discord.Embed(title = f'{blog_title}', description = f'Название поста: {blog_title}\nОписание Поста: {blog_content}\nАйди поста: {id}', color=0x24ff00))
 #		except:
-#			await message.channel.send(embed = discord.Embed(title="Ошибка получения информации от поста:", description=":exclamation: | Проверьте правильность написания.", color=0xff0000))
+#			await message.channel.send(embed = discord.Embed(title="Information retrieval error:", description=":exclamation: | Check the spelling.", color=0xff0000))
 
 #
 #CLIENT RUN
